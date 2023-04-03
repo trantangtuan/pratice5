@@ -1,0 +1,19 @@
+import 'dart:io';
+
+void main() {
+ 
+  var fileName = 'friends.txt';
+
+  
+  var file = File(fileName);
+  var content = file.readAsStringSync();
+
+  
+  var friends = ['Friend 1', 'Friend 2', 'Friend 3'];
+  for (var friend in friends) {
+    content += '\n$friend';
+  }
+
+  
+  file.writeAsStringSync(content);
+}
